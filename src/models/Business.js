@@ -1,11 +1,11 @@
 import { Schema, model } from "mongoose";
 
 const businessSchema = Schema({
-  business: {
+  businessName: {
     type: String,
     required: true,
   },
-  description: {
+  businessDescription: {
     type: String,
     required: true,
   },
