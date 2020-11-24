@@ -2,6 +2,7 @@ import 'dotenv/config';
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import './config/mongoose';
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.use(cors());
 
 app.all('*', (req, res) => res.status(404).json({
   success: false,
-  message: 'You are on Investico NIG LTD but it looks like The page you are looking for does not exist'
+  message: 'You are on arca NIG LTD but it looks like The page you are looking for does not exist'
 }));
 
 const PORT = process.env.PORT || 2000;
