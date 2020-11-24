@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">35.71% </span>
+                <span class="strong">92.86% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/14</span>
+                <span class='fraction'>13/14</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">35.71% </span>
+                <span class="strong">92.86% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/14</span>
+                <span class='fraction'>13/14</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -205,7 +205,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -239,7 +239,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -250,7 +250,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -258,7 +258,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -268,7 +268,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -281,7 +281,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -290,7 +290,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -299,7 +299,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -330,8 +330,8 @@ class SendEmail {
    * @param {string} token - Token generated during signup
    * @returns {boolean} specifies if the email was sent successfully
    */
-  static verifyEmail(<span class="fstat-no" title="function not covered" >email, f</span>irstName, token) {
-    const details = <span class="cstat-no" title="statement not covered" >{</span>
+  static verifyEmail(email, firstName, token) {
+    const details = {
       email,
       subject: "Email Verification - Arca",
       html: `'&lt;div style="width: 90%; margin: 5em auto;
@@ -365,7 +365,7 @@ class SendEmail {
         &lt;/div&gt;
       &lt;/div&gt;`,
     };
-<span class="cstat-no" title="statement not covered" >    return S</span>endEmail.emailSender(details);
+    return SendEmail.emailSender(details);
   }
 &nbsp;
   /**
@@ -375,8 +375,8 @@ class SendEmail {
    * @returns {boolean} specifies if a verification email was sent to user
    * after registration
    */
-  static confirmRegistrationComplete(<span class="fstat-no" title="function not covered" >email) {</span>
-    const details = <span class="cstat-no" title="statement not covered" >{</span>
+  static confirmRegistrationComplete(email) {
+    const details = {
       email,
       subject: "Email Verification - Arca",
       html: `&lt;p&gt;Your registration has been completed&lt;p&gt;
@@ -384,7 +384,7 @@ class SendEmail {
        &lt;p&gt; &gt;&gt;&gt;
        &lt;a href=${baseUrl}/home&gt; Go to your profile &lt;/a&gt; &lt;&lt;&lt; &lt;/p&gt;`,
     };
-<span class="cstat-no" title="statement not covered" >    return S</span>endEmail.emailSender(details);
+    return SendEmail.emailSender(details);
   }
 &nbsp;
   /**
@@ -393,8 +393,8 @@ class SendEmail {
    * @returns {boolean} specifies if a verification email was sent to user
    * after registration
    */
-  static resetPassword(<span class="fstat-no" title="function not covered" >email) {</span>
-    const details = <span class="cstat-no" title="statement not covered" >{</span>
+  static resetPassword(email) {
+    const details = {
       email,
       subject: "Reset Password - Soft Overflow",
       html: `&lt;div&gt;
@@ -407,7 +407,7 @@ class SendEmail {
         Reset Password&lt;/a&gt;&lt;/button&gt;
         &lt;/div&gt;`,
     };
-<span class="cstat-no" title="statement not covered" >    return S</span>endEmail.emailSender(details);
+    return SendEmail.emailSender(details);
   }
 &nbsp;
   /**
@@ -416,7 +416,7 @@ class SendEmail {
    * @returns {boolean} sends email to users
    */
   static async emailSender(details) {
-<span class="cstat-no" title="statement not covered" >    sendGrid.s</span>etApiKey(process.env.SENDGRID_API_KEY);
+    sendGrid.setApiKey(process.env.SENDGRID_API_KEY);
     const msg = {
       from: process.env.mail_master,
       html: details.html,
@@ -425,7 +425,7 @@ class SendEmail {
     };
     try {
       const isEmailSent = await sendGrid.send(msg);
-<span class="cstat-no" title="statement not covered" >      console.</span>log("is email sent",isEmailSent)
+      console.log("is email sent",isEmailSent)
       if (isEmailSent) {
         return true;
       }
@@ -442,7 +442,7 @@ export default SendEmail;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Nov 24 2020 17:50:46 GMT-0500 (Eastern Standard Time)
+                at Tue Nov 24 2020 18:11:36 GMT-0500 (Eastern Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>
