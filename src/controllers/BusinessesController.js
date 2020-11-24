@@ -1,5 +1,5 @@
-import { User } from "../models";
-import { Authentication, SendEmail, HelperMethods, CryptData } from "../utils";
+import { Business } from "../models";
+import { HelperMethods } from "../utils";
 
 /**
  * Class representing the user controller

@@ -1,3 +1,3 @@
 import User from "./User";
-
-export { User };
+import Business from "./Business"
+export { User, Business };

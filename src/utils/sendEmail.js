@@ -114,6 +114,7 @@ class SendEmail {
     };
     try {
       const isEmailSent = await sendGrid.send(msg);
+      console.log("is email sent",isEmailSent)
       if (isEmailSent) {
         return true;
       }
