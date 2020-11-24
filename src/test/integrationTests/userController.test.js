@@ -29,9 +29,9 @@ describe('Integration tests for the user controller', () => {
     });
     it('should create a user and send email for verification', async () => {
       const userDetails = {
-        username: 'jkfhjjkjk',
+        username: 'jjkjghjhh',
         password: 'password',
-        email: 'jkfhjjkjk@wemail.com',
+        email: 'jjkjghjhh@wemail.com',
         firstName: 'John',
         lastName: 'Doe',
       };
@@ -53,9 +53,9 @@ describe('Integration tests for the user controller', () => {
     it('should tell the user to re-register when confirmation '
       + 'email is not sent', async () => {
       const userDetails = {
-        username: 'jkkds',
+        username: 'iooi',
         password: 'password',
-        email: 'jkkds',
+        email: 'ewewr',
         firstName: 'Johns',
         lastName: 'Does',
       };
@@ -88,11 +88,11 @@ describe('Integration tests for the user controller', () => {
   });
   describe('Test login a user', () => {
     it('should log a user in when valid details are given', async () => {
-      await User.updateOne({ email: 'jkfhjjkjk@wemail.com' },
+      await User.updateOne({ email: 'jjkjghjhh@wemail.com' },
         { $set: { isVerified: true } });
       const response = await chai.request(app).post('/api/v1/auth/login')
         .send({
-          email: 'jkfhjjkjk@wemail.com',
+          email: 'jjkjghjhh@wemail.com',
           password: 'password'
         });
       expect(response.body).to.have.property('message');
