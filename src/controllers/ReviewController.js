@@ -65,8 +65,8 @@ class ReviewController {
     return await crudController.findOne(req, res);
   }
   /**
-   * Update a business
-   * Route: PATCH: /business/:id
+   * Update a review
+   * Route: PATCH: /review/:id
    * @param {object} req - HTTP Request object
    * @param {object} res - HTTP Response object
    * @return {res} res - HTTP Response object
@@ -78,8 +78,8 @@ class ReviewController {
   }
 
   /**
-   * Delete a business
-   * Route: DELETE: /business/:id
+   * Delete a review
+   * Route: DELETE: /review/:id
    * @param {object} req - HTTP Request object
    * @param {object} res - HTTP Response object
    * @return {res} res - HTTP Response object
