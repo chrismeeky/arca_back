@@ -57,47 +57,6 @@ class SendEmail {
     return SendEmail.emailSender(details);
   }
 
-  /**
-   * This function sends an email on verification of email address
-   * @param {string} email - email address to send the message to
-   * @param {string} token - Token generated during signup
-   * @returns {boolean} specifies if a verification email was sent to user
-   * after registration
-   */
-  static confirmRegistrationComplete(email) {
-    const details = {
-      email,
-      subject: "Email Verification - Arca",
-      html: `<p>Your registration has been completed<p>
-      <p>Thank you for registering with Arca.</p>
-       <p> >>>
-       <a href=${baseUrl}/home> Go to your profile </a> <<< </p>`,
-    };
-    return SendEmail.emailSender(details);
-  }
-
-  /**
-   * This function sends an email to reset password
-   * @param {string} email - email address to send the message to
-   * @returns {boolean} specifies if a verification email was sent to user
-   * after registration
-   */
-  static resetPassword(email) {
-    const details = {
-      email,
-      subject: "Reset Password - Soft Overflow",
-      html: `<div>
-        <p>Click on the button below to reset your password.</p>
-        <button style="color: white; background-color: #2084ba; 
-        border: none; border-radius: 10px; text-align: center;
-        padding: 10px;">
-        <a  href="${baseUrl}"
-          style="text-decoration: none; color: white;">
-        Reset Password</a></button>
-        </div>`,
-    };
-    return SendEmail.emailSender(details);
-  }
 
   /**
    *

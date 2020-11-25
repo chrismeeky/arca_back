@@ -16,13 +16,13 @@ class BusinessController {
    * @return {res} res - HTTP Response object
    * @memberof BusinessController
    */
-  static async createBusiness(req, res) {
+  static createBusiness = async (req, res) => {
     const crudController = new CrudController(Business, "business", {
       businessName: req.body.businessName,
-      customMessage:"Businesses must be unique"
+      customMessage: "Businesses must be unique",
     });
     return await crudController.create(req, res);
-  }
+  };
 
   /**
    * Find all businesses
@@ -32,10 +32,10 @@ class BusinessController {
    * @return {res} res - HTTP Response object
    * @memberof BusinessController
    */
-  static async findAllBusinesses(req, res) {
+  static findAllBusinesses = async (req, res) => {
     const crudController = new CrudController(Business, "business");
     return await crudController.findAll(req, res);
-  }
+  };
   /**
    * Find one business
    * Route: GET: /business/:id
@@ -44,10 +44,10 @@ class BusinessController {
    * @return {res} res - HTTP Response object
    * @memberof BusinessController
    */
-  static async findBusiness(req, res) {
+  static findBusiness = async (req, res) => {
     const crudController = new CrudController(Business, "business");
     return await crudController.findOne(req, res);
-  }
+  };
 
   /**
    * Update a business
@@ -57,10 +57,10 @@ class BusinessController {
    * @return {res} res - HTTP Response object
    * @memberof BusinessController
    */
-  static async updateBusiness(req, res) {
+  static updateBusiness = async (req, res) => {
     const crudController = new CrudController(Business, "business");
     return await crudController.update(req, res);
-  }
+  };
 
   /**
    * Delete a business
@@ -70,10 +70,10 @@ class BusinessController {
    * @return {res} res - HTTP Response object
    * @memberof BusinessController
    */
-  static async deleteBusiness(req, res) {
+  static deleteBusiness = async (req, res) => {
     const crudController = new CrudController(Business, "business");
     return await crudController.deleteOne(req, res);
-  }
+  };
 }
 
 export default BusinessController;

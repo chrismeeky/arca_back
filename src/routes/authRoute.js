@@ -1,24 +1,23 @@
-import { UserController } from '../controllers';
-import Validate from '../validation';
-import { Authorization } from '../middlewares';
+import { UserController } from "../controllers";
+import Validate from "../validation";
+import { Authorization } from "../middlewares";
 
-const authRoutes = app => {
+const authRoutes = (app) => {
   app.post(
-    '/api/v1/auth/signup',
+    "/api/v1/auth/signup",
     Validate.validateUserInput,
-    UserController.signUp,
+    UserController.signUp
   );
   app.post(
-    '/api/v1/auth/login',
+    "/api/v1/auth/login",
     Validate.validateUserLogin,
-    UserController.login,
+    UserController.login
   );
   app.get(
-    '/api/v1/auth/verify_email',
+    "/api/v1/auth/verify_email",
     Authorization.checkToken,
-    UserController.verifyEmail,
+    UserController.verifyEmail
   );
- 
 };
 
 export default authRoutes;

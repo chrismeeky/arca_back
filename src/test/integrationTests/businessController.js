@@ -1,6 +1,5 @@
 import chai from "chai";
 import chaiHttp from "chai-http";
-import sinon from "sinon";
 import app from "../../index";
 import { Business } from "../../models";
 

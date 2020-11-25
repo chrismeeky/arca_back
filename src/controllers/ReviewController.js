@@ -14,7 +14,7 @@ class ReviewController {
    * @return {res} res - HTTP Response object
    * @memberof ReviewController
    */
-  static async createReview(req, res) {
+  static createReview =  async(req, res) =>{
     const crudController = new CrudController(Review, "review", {
       business: req.body.business,
       user: req.body.user,
@@ -31,7 +31,7 @@ class ReviewController {
    * @return {res} res - HTTP Response object
    * @memberof ReviewController
    */
-  static async findAllReviews(req, res) {
+  static findAllReviews = async(req, res) =>{
     const crudController = new CrudController(Review, "review");
     return await crudController.findAll(req, res);
   }
@@ -43,7 +43,7 @@ class ReviewController {
    * @return {res} res - HTTP Response object
    * @memberof ReviewController
    */
-  static async findBusinessReview(req, res) {
+  static findBusinessReview = async(req, res) => {
     const crudController = new CrudController(
       Review,
       "review",
@@ -60,7 +60,7 @@ class ReviewController {
    * @return {res} res - HTTP Response object
    * @memberof ReviewController
    */
-  static async findOneReview(req, res) {
+  static findOneReview = async(req, res) =>{
     const crudController = new CrudController(Review, "review");
     return await crudController.findOne(req, res);
   }
@@ -72,7 +72,7 @@ class ReviewController {
    * @return {res} res - HTTP Response object
    * @memberof ReviewController
    */
-  static async updateAReview(req, res) {
+  static updateAReview = async(req, res) =>{
     const crudController = new CrudController(Review, "review");
     return await crudController.update(req, res);
   }
@@ -85,7 +85,7 @@ class ReviewController {
    * @return {res} res - HTTP Response object
    * @memberof ReviewController
    */
-  static async deleteReview(req, res) {
+  static deleteReview =async(req, res) => {
     const crudController = new CrudController(Review, "review");
     return await crudController.deleteOne(req, res);
   }

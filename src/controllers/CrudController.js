@@ -1,4 +1,3 @@
-import { Business } from "../models";
 import { HelperMethods } from "../utils";
 
 /**
@@ -13,6 +12,13 @@ class CrudController {
     this.unique = unique;
     this.criteria = criteria;
   }
+
+  checkCriteria = async (req) => {
+    const criteria = Object.keys(this.criteria).length
+      ? this.criteria
+      : { _id: req.params.id };
+    return criteria;
+  };
   /**
    * Creates a new data
    * @param {object} req - HTTP Request object
@@ -20,22 +26,15 @@ class CrudController {
    * @return {res} res - HTTP Response object
    * @memberof CrudController
    */
-  async create(req, res) {
-    const criteria = Object.keys(this.criteria).length
-      ? this.criteria
-      : { _id: req.params.id };
+  create = async (req, res) => {
     try {
-        const unique = {...this.unique}
-        delete unique.customMessage
+      const unique = { ...this.unique };
+      delete unique.customMessage;
       if (Object.keys(this.unique).length) {
-        const isExist =await this.Model.findOne(unique);
+        const isExist = await this.Model.findOne(unique);
         if (isExist)
-          return HelperMethods.clientError(
-            res,
-            this.unique.customMessage
-          );
+          return HelperMethods.clientError(res, this.unique.customMessage);
       }
-
       const newData = new this.Model(req.body);
       const savedData = await newData.save();
       if (savedData) {
@@ -51,7 +50,7 @@ class CrudController {
     } catch (error) {
       return HelperMethods.serverError(res, error.message);
     }
-  }
+  };
 
   /**
    * Find all data
@@ -60,7 +59,7 @@ class CrudController {
    * @return {res} res - HTTP Response object
    * @memberof CrudController
    */
-  async findAll(req, res) {
+  findAll = async (req, res) => {
     try {
       const data = await this.Model.find(this.criteria);
       if (data && data.length) {
@@ -69,14 +68,11 @@ class CrudController {
           [`${this.modelName}s`]: data,
         });
       }
-      return HelperMethods.clientError(
-        res,
-        `No ${this.modelName}s was found`
-      );
+      return HelperMethods.clientError(res, `No ${this.modelName}s was found`);
     } catch (error) {
       return HelperMethods.serverError(res, error.message);
     }
-  }
+  };
   /**
    * Find one
    * @param {object} req - HTTP Request object
@@ -84,23 +80,21 @@ class CrudController {
    * @return {res} res - HTTP Response object
    * @memberof CrudController
    */
-  async findOne(req, res) {
-    const criteria = Object.keys(this.criteria).length
-      ? this.criteria
-      : { _id: req.params.id };
+  findOne = async (req, res) => {
+    const findOneCriteria =await this.checkCriteria(req);
     try {
-      const data = await this.Model.findOne(criteria)
+      const data = await this.Model.findOne(findOneCriteria);
       if (data) {
         return HelperMethods.requestSuccessful(res, {
           message: `${this.modelName} found successfully`,
-          [this.modelName]:data,
+          [this.modelName]: data,
         });
       }
       return HelperMethods.clientError(res, `${this.modelName} does not exist`);
     } catch (error) {
       return HelperMethods.serverError(res, error.message);
     }
-  }
+  };
 
   /**
    * Update a data
@@ -109,19 +103,17 @@ class CrudController {
    * @return {res} res - HTTP Response object
    * @memberof CrudController
    */
-  async update(req, res) {
-    const criteria = Object.keys(this.criteria).length
-      ? this.criteria
-      : { _id: req.params.id };
+  update = async (req, res) => {
+    const updateCriteria =await this.checkCriteria(req);
     try {
-      const data = await this.Model.findOne(criteria);
+      const data = await this.Model.findOne(updateCriteria);
       if (!data) {
         return HelperMethods.clientError(
           res,
           `${this.modelName} does not exist`
         );
       }
-      const updatedData = await this.Model.updateOne(criteria, {
+      const updatedData = await this.Model.updateOne(updateCriteria, {
         $set: req.body,
       });
       if (updatedData) {
@@ -136,7 +128,7 @@ class CrudController {
     } catch (error) {
       return HelperMethods.serverError(res, error.message);
     }
-  }
+  };
 
   /**
    * Delete data
@@ -145,19 +137,17 @@ class CrudController {
    * @return {res} res - HTTP Response object
    * @memberof CrudController
    */
-   async deleteOne(req, res) {
-    const criteria = Object.keys(this.criteria).length
-      ? this.criteria
-      : { _id: req.params.id };
+  deleteOne = async (req, res) => {
+    const deleteCriteria =await this.checkCriteria(req);
     try {
-      const data = await this.Model.findOne(criteria);
+      const data = await this.Model.findOne(deleteCriteria);
       if (!data) {
         return HelperMethods.clientError(
           res,
           `${this.modelName} does not exist`
         );
       }
-      const deletedData = await this.Model.deleteOne(criteria);
+      const deletedData = await this.Model.deleteOne(deleteCriteria);
       if (deletedData) {
         return HelperMethods.requestSuccessful(res, {
           message: `${this.modelName} successfully deleted`,
@@ -170,7 +160,7 @@ class CrudController {
     } catch (error) {
       return HelperMethods.serverError(res, error.message);
     }
-  }
+  };
 }
 
 export default CrudController;

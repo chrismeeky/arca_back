@@ -25,28 +25,28 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>15/20</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
@@ -154,6 +154,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -168,6 +170,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -179,6 +195,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -190,26 +208,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -233,13 +233,13 @@ class BusinessController {
    * @return {res} res - HTTP Response object
    * @memberof BusinessController
    */
-  static async createBusiness(req, res) {
+  static createBusiness = <span class="branch-2 cbranch-no" title="branch not covered" >async (r</span>eq, res) =&gt; {
     const crudController = new CrudController(Business, "business", {
       businessName: req.body.businessName,
-      customMessage:"Businesses must be unique"
+      customMessage: "Businesses must be unique",
     });
     return await crudController.create(req, res);
-  }
+  };
 &nbsp;
   /**
    * Find all businesses
@@ -249,10 +249,10 @@ class BusinessController {
    * @return {res} res - HTTP Response object
    * @memberof BusinessController
    */
-  static async findAllBusinesses(req, res) {
+  static findAllBusinesses = <span class="branch-2 cbranch-no" title="branch not covered" >async (r</span>eq, res) =&gt; {
     const crudController = new CrudController(Business, "business");
     return await crudController.findAll(req, res);
-  }
+  };
   /**
    * Find one business
    * Route: GET: /business/:id
@@ -261,10 +261,10 @@ class BusinessController {
    * @return {res} res - HTTP Response object
    * @memberof BusinessController
    */
-  static async findBusiness(req, res) {
+  static findBusiness = <span class="branch-2 cbranch-no" title="branch not covered" >async (r</span>eq, res) =&gt; {
     const crudController = new CrudController(Business, "business");
     return await crudController.findOne(req, res);
-  }
+  };
 &nbsp;
   /**
    * Update a business
@@ -274,10 +274,10 @@ class BusinessController {
    * @return {res} res - HTTP Response object
    * @memberof BusinessController
    */
-  static async updateBusiness(req, res) {
+  static updateBusiness = <span class="branch-2 cbranch-no" title="branch not covered" >async (r</span>eq, res) =&gt; {
     const crudController = new CrudController(Business, "business");
     return await crudController.update(req, res);
-  }
+  };
 &nbsp;
   /**
    * Delete a business
@@ -287,10 +287,10 @@ class BusinessController {
    * @return {res} res - HTTP Response object
    * @memberof BusinessController
    */
-  static async deleteBusiness(req, res) {
+  static deleteBusiness = <span class="branch-2 cbranch-no" title="branch not covered" >async (r</span>eq, res) =&gt; {
     const crudController = new CrudController(Business, "business");
     return await crudController.deleteOne(req, res);
-  }
+  };
 }
 &nbsp;
 export default BusinessController;
@@ -301,7 +301,7 @@ export default BusinessController;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Nov 25 2020 05:58:49 GMT-0500 (Eastern Standard Time)
+                at Tue Nov 24 2020 20:39:00 GMT-0500 (Eastern Standard Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

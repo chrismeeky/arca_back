@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/chrismeeky/arca_back#readme",
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/runtime": "^7.6.2",
     "@sendgrid/mail": "^6.4.0",
     "bcrypt": "^3.0.6",
@@ -58,7 +59,7 @@
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-import": "^2.18.2",
-    "nodemon": "^1.19.2",
-    "mocha": "^8.2.1"
+    "mocha": "^8.2.1",
+    "nodemon": "^1.19.2"
   }
 }
