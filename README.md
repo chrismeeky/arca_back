@@ -1,9 +1,9 @@
-[![Build Status](https://travis-ci.com/chrismeeky/arca_back.svg?branch=develop)](https://travis-ci.com/chrismeeky/arca_back)
-[![Coverage Status](https://coveralls.io/repos/github/chrismeeky/arca_back/badge.svg?branch=develop)](https://coveralls.io/github/chrismeeky/arca_back?branch=develop)
+[![Build Status](https://travis-ci.com/chrismeeky/phillips_back.svg?branch=develop)](https://travis-ci.com/chrismeeky/phillips_back)
+[![Coverage Status](https://coveralls.io/repos/github/chrismeeky/phillips_back/badge.svg?branch=develop)](https://coveralls.io/github/chrismeeky/phillips_back?branch=develop)
 
-# Arca Reviews
+# Phillips Reviews
 
-Arca reviews is an application that gives platform for reviewing businesses.
+Phillips reviews is an application that gives platform for reviewing businesses.
 
 ### Technologies
 
@@ -16,11 +16,11 @@ Arca reviews is an application that gives platform for reviewing businesses.
 
 ### REST API Docs
 
-The Api documentation is done using Postman. View [Arca Reviews API Documentation](https://documenter.getpostman.com/)
+The Api documentation is done using Postman. View [Phillips Reviews API Documentation](https://documenter.getpostman.com/view/9168340/TVmFkg88)
 
 ### Heroku Link
 
-The app is hosted on Heroku.com. Open [Arca APP](https://arcaback.herokuapp.com) to make your requests
+The app is hosted on Heroku.com. Open [Phillips APP](https://phillipsback.herokuapp.com) to make your requests
 
 ### JWT Authentication
 
@@ -40,15 +40,15 @@ Approve a business
 
 ## Installation and Running the Application
 
-- Clone the repository using: `git clone https://github.com/chrismeeky/arca_back.git`
+- Clone the repository using: `git clone https://github.com/chrismeeky/phillips_back.git`
 - Run `yarn install` To install project dependencies
 - Run `yarn dev-start` To start the application
 - Run `yarn test` to run test
 
 ## Contributors
 
-- [Nwodo Christian Chukwuemeka](https://github.com/Chrismeeky)
+- [Nwodo Christian Chukwuemeka](https://github.com/chrismeeky)
 
 ## License
 
-[MIT](https://github.com/chrismeeky/arca_back/blob/develop/LICENSE)
+[MIT](https://github.com/chrismeeky/phillips_back/blob/develop/LICENSE)

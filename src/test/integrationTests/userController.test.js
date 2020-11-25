@@ -15,12 +15,12 @@ resetData();
 
 describe("Integration tests for the user controller", () => {
   describe("Test general error handling and welcome message", () => {
-    it('should send a "You are on arca NIG LTD but it looks like The page you are looking for does not exist" error when invalid URL is given', async () => {
+    it('should send a "You are on Phillips NIG LTD but it looks like The page you are looking for does not exist', async () => {
       const response = await chai.request(app).get("/api/v1/some/funny/url");
       expect(response.status).to.equal(404);
       expect(response.body).to.have.property("message");
       expect(response.body.message).to.equal(
-        "You are on arca NIG LTD but it looks like The page you are looking for does not exist"
+        "You are on Phillips NIG LTD but it looks like The page you are looking for does not exist"
       );
     });
   });
