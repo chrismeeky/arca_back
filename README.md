@@ -1,1 +1,1 @@
-# arca_back
+[![Build Status](https://travis-ci.com/chrismeeky/arca_back.svg?branch=develop)](https://travis-ci.com/chrismeeky/arca_back)
