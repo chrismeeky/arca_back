@@ -90,7 +90,7 @@ class CrudController {
    * @memberof CrudController
    */
   findOne = async (req, res) => {
-    const findOneCriteria = await this.checkCriteria(req);
+    const findOneCriteria =await this.checkCriteria(req);
     try {
       const data = await this.Model.findOne(findOneCriteria);
       if (data) {
@@ -113,7 +113,7 @@ class CrudController {
    * @memberof CrudController
    */
   update = async (req, res) => {
-    const updateCriteria = await this.checkCriteria(req);
+    const updateCriteria =await this.checkCriteria(req);
     try {
       const data = await this.Model.findOne(updateCriteria);
       if (!data) {
@@ -147,7 +147,7 @@ class CrudController {
    * @memberof CrudController
    */
   deleteOne = async (req, res) => {
-    const deleteCriteria = await this.checkCriteria(req);
+    const deleteCriteria =await this.checkCriteria(req);
     try {
       const data = await this.Model.findOne(deleteCriteria);
       if (!data) {
