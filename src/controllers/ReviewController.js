@@ -54,7 +54,7 @@ class ReviewController {
   }
   /**
    * Find one review
-   * Route: GET: /business/:id
+   * Route: GET: /review/:id
    * @param {object} req - HTTP Request object
    * @param {object} res - HTTP Response object
    * @return {res} res - HTTP Response object
